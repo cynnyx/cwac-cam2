@@ -21,6 +21,7 @@ import android.animation.ObjectAnimator;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
@@ -240,7 +241,10 @@ public class CameraFragment extends Fragment {
     fabPicture.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        performCameraAction();
+//        performCameraAction();
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("https://kdzwinel.github.io/JS-face-tracking-demo/"));
+        getActivity().startActivity(i);
       }
     });
 
